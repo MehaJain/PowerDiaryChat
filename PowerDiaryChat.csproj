@@ -123,13 +123,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PowerDiaryChat.DB\PowerDiaryChat.DB.csproj">
-      <Project>{65a3faed-a270-4433-9997-95b7727d0eaa}</Project>
-      <Name>PowerDiaryChat.DB</Name>
-    </ProjectReference>
     <ProjectReference Include="PowerDiaryChat.Data\PowerDiaryChat.Data.csproj">
       <Project>{4BBC8151-21B9-4037-B190-D28EA323C4B7}</Project>
       <Name>PowerDiaryChat.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="PowerDiaryChat.DB\PowerDiaryChat.DB.csproj">
+      <Project>{65a3faed-a270-4433-9997-95b7727d0eaa}</Project>
+      <Name>PowerDiaryChat.DB</Name>
     </ProjectReference>
     <ProjectReference Include="PowerDiaryChat.Services\PowerDiaryChat.Services.csproj">
       <Project>{af1230aa-a670-4521-9fee-8bcc6b93de72}</Project>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF1230AA-A670-4521-9FEE-8BCC6B93DE72}</ProjectGuid>
+    <ProjectGuid>{65A3FAED-A270-4433-9997-95B7727D0EAA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PowerDiaryChat.Services</RootNamespace>
-    <AssemblyName>PowerDiaryChat.Services</AssemblyName>
+    <RootNamespace>PowerDiaryChat.DB</RootNamespace>
+    <AssemblyName>PowerDiaryChat.DB</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,10 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatService.cs" />
-    <Compile Include="Enums\GranularityLevel.cs" />
-    <Compile Include="interfaces\IChatServie.cs" />
-    <Compile Include="Model\ChatModelDto.cs" />
+    <Compile Include="ChatDbContext.cs" />
+    <Compile Include="ChatRepo.cs" />
+    <Compile Include="DummyData.cs" />
+    <Compile Include="IChatRepo.cs" />
+    <Compile Include="Migrations\202006282110418_InitialDB.cs" />
+    <Compile Include="Migrations\202006282110418_InitialDB.designer.cs">
+      <DependentUpon>202006282110418_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,11 +60,16 @@
       <Project>{4bbc8151-21b9-4037-b190-d28ea323c4b7}</Project>
       <Name>PowerDiaryChat.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PowerDiaryChat.DB\PowerDiaryChat.DB.csproj">
-      <Project>{65a3faed-a270-4433-9997-95b7727d0eaa}</Project>
-      <Name>PowerDiaryChat.DB</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006282110418_InitialDB.resx">
+      <DependentUpon>202006282110418_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
