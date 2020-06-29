@@ -8,8 +8,9 @@ The app allows user to see every chat event as it occurred, or stats about chat 
 
 Implementation details:
 
--User interface using WPF with MVVM Light
+-User interface using WPF with MVVM Light, which can be easily replaced with Web App
 -Entity Framework Code First Approach to save/load dummy data
+
 
 Coding components:
 
