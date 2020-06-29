@@ -22,8 +22,14 @@ Coding components:
 Project Details: 
 
 Within this app there are 5 projects as follows:
+
 PowerDiaryChat.Data
+
 PowerDiaryChat.DB
+
 PowerDiaryChat.Services
+
 PowerDiaryChat
+
 PowerDiaryChat.Tests
+
