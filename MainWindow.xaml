@@ -1,0 +1,41 @@
+﻿<Window x:Class="PowerDiaryChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content="Granularity Level: "  Margin="10,5" />
+            <ComboBox Height="30" Margin="10,5" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch"
+                      Width="200"
+                      VerticalContentAlignment="Center"
+                      SelectedItem="{Binding Path=SelectedGranularityLevel}"  
+                      ItemsSource="{Binding Granularity, Mode=TwoWay}">
+            </ComboBox>
+        </StackPanel>
+
+        <ListBox Grid.Row="1"
+                    Margin="10,5"
+                    ItemsSource="{Binding Chats}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Content="{Binding Key}" Margin="5"/>
+                        <ListBox Margin="10,5"
+                                 ItemsSource="{Binding}">
+                        </ListBox>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
